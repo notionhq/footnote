@@ -9,6 +9,7 @@
   %textarea{ name: "annotatable_file[description]" }
   %input{ type: "submit", value: "create!" }
 
-.file
-  =@annotatable_file.title
-  =@annotatable_file.description
+- if @annotatable_file
+  .file
+    =@annotatable_file.title
+    =@annotatable_file.description

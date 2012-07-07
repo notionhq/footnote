@@ -60,7 +60,7 @@ DataMapper.auto_upgrade!
 DataMapper.finalize
 
 helpers do
-  def current_user 
+  def current_user
     User.first_or_create( username: "user" )
   end
 end
