@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'racksh'
+gem 'haml'
+gem 'sass'
+gem 'shotgun'
+gem 'coffee-script'
