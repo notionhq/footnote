@@ -59,8 +59,17 @@ end
 DataMapper.auto_upgrade!
 DataMapper.finalize
 
+helpers do
+  def current_user 
+    User.first_or_create( username: "user" )
+  end
+end
 
 # Routes
+post '/annotatable-files' do
+  @annotatable_file = current_user.annotatable_files.create(params[:annotatable_file])
+  redirect to('/')
+end
 
 get '/stylesheets/application.css' do
   sass :'sass/application'
@@ -71,5 +80,6 @@ get '/javascripts/:filename.js' do
 end
 
 get '/' do
+  @annotatable_file = current_user.annotatable_files.last
   haml :index
 end

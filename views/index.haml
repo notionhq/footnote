@@ -1,1 +1,14 @@
 %h1 Hello Footnote Friends
+
+%p
+  hello
+  =current_user.username
+
+%form{ action: "/annotatable-files", method: "post", enctype: "multipart/form-data" }
+  %input{ type: "text", name: "annotatable_file[title]" }
+  %textarea{ name: "annotatable_file[description]" }
+  %input{ type: "submit", value: "create!" }
+
+.file
+  =@annotatable_file.title
+  =@annotatable_file.description
