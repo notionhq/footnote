@@ -78,6 +78,7 @@ DataMapper.auto_upgrade!
 DataMapper.finalize
 
 helpers do
+<<<<<<< HEAD
   include Rack::Utils
   alias_method :h, :escape_html
 
@@ -125,10 +126,6 @@ helpers do
   def partial(template, locals = {})
     erb(template, :layout => false, :locals => locals)
   end
-
-  # def current_user 
-  #     User.first_or_create( username: "user" )
-  #   end
 
 end
 
