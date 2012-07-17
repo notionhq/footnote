@@ -1,0 +1,12 @@
+%h3 Login
+%form{:action => "/login", :method => "post"}
+  %p
+    %label{:for => "username"} User Name
+    %input{:name => "username", :type => "text", :value => params[:username]}
+  %p
+    %label{:for => "password"} Password
+    %input{:name => "password", :type => "password"}
+  %p
+    %input{:checked => "", :name => "remember_me", :type => "checkbox", :value => "true"}
+    %label{:for => "remember_me"} Keep me logged in
+  %input{:type => "submit", :value => "Login"}

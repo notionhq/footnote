@@ -1,14 +1,22 @@
 %h1 Hello Footnote Friends
 
-%p
-  hello
-  =current_user.username
+-if current_user
+  %p 
+    Logged in as
+    = current_user.username
+    \| 
+    %a{ href: "/logout" }logout
+-else
+  %p
+    %a{ href: "/login" }login
+    \|
+    %a{ href: "/signup" }register
 
-%form{ action: "/annotatable-files", method: "post", enctype: "multipart/form-data" }
-  %input{ type: "text", name: "annotatable_file[title]" }
-  %textarea{ name: "annotatable_file[description]" }
-  %input{ type: "submit", value: "create!" }
-
-.file
-  =@annotatable_file.title
-  =@annotatable_file.description
+/ %form{ action: "/annotatable-files", method: "post", enctype: "multipart/form-data" }
+/   %input{ type: "text", name: "annotatable_file[title]" }
+/   %textarea{ name: "annotatable_file[description]" }
+/   %input{ type: "submit", value: "create!" }
+/ 
+/ .file
+/   =@annotatable_file.title
+/   =@annotatable_file.description
